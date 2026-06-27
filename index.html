@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>LSPD / LSSD Vehicle Catalog</title>
+  <title>Vehicle Catalog · LSPD / LSSD</title>
 
   <style>
     :root {
@@ -14,24 +13,15 @@
       --card-light: #18243a;
       --text: #f6f8fc;
       --muted: #9ba8ba;
-      --line: rgba(255, 255, 255, 0.11);
-
+      --line: rgba(255,255,255,.11);
       --lspd: #2f7dff;
-      --lspd-soft: rgba(47, 125, 255, 0.16);
-
       --lssd: #d7a640;
-      --lssd-soft: rgba(215, 166, 64, 0.16);
-
-      --danger: #ff5b5b;
-      --danger-soft: rgba(255, 91, 91, 0.14);
-
+      --sahp: #51d6ff;
+      --federal: #b58cff;
+      --swat: #ff5b5b;
       --success: #3ee49f;
-      --success-soft: rgba(62, 228, 159, 0.13);
-
       --radius: 22px;
-      --radius-sm: 14px;
-
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+      --shadow: 0 24px 70px rgba(0,0,0,.42);
     }
 
     * {
@@ -49,14 +39,13 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(47, 125, 255, 0.2), transparent 32%),
-        radial-gradient(circle at top right, rgba(215, 166, 64, 0.16), transparent 34%),
+        radial-gradient(circle at top left, rgba(47,125,255,.22), transparent 32%),
+        radial-gradient(circle at top right, rgba(215,166,64,.18), transparent 34%),
+        radial-gradient(circle at 50% 0%, rgba(181,140,255,.08), transparent 36%),
         linear-gradient(180deg, #05070d 0%, var(--bg) 100%);
     }
 
-    button,
-    input,
-    select {
+    button, input, select {
       font: inherit;
     }
 
@@ -65,7 +54,7 @@
     }
 
     .page {
-      width: min(1540px, calc(100% - 32px));
+      width: min(1600px, calc(100% - 32px));
       margin: 0 auto;
       padding: 28px 0 70px;
     }
@@ -79,7 +68,7 @@
       margin-bottom: 26px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(13, 20, 36, 0.82);
+      background: rgba(13,20,36,.84);
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
     }
@@ -98,8 +87,8 @@
       border-radius: 17px;
       background: linear-gradient(135deg, var(--lspd), var(--lssd));
       font-weight: 900;
-      letter-spacing: -0.05em;
-      box-shadow: 0 0 40px rgba(47, 125, 255, 0.28);
+      letter-spacing: -.05em;
+      box-shadow: 0 0 40px rgba(47,125,255,.28);
     }
 
     .brand h1 {
@@ -110,7 +99,7 @@
     .brand p {
       color: var(--muted);
       margin-top: 4px;
-      font-size: 0.92rem;
+      font-size: .92rem;
     }
 
     .top-stats {
@@ -125,7 +114,7 @@
       padding: 11px 14px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.045);
+      background: rgba(255,255,255,.045);
     }
 
     .stat span {
@@ -139,21 +128,15 @@
       display: block;
       margin-top: 5px;
       color: var(--muted);
-      font-size: 0.73rem;
+      font-size: .73rem;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
     }
 
-    .stat.blue {
-      border-color: rgba(47, 125, 255, 0.3);
-      background: var(--lspd-soft);
-    }
-
-    .stat.gold {
-      border-color: rgba(215, 166, 64, 0.32);
-      background: var(--lssd-soft);
-    }
+    .stat.blue { border-color: rgba(47,125,255,.3); background: rgba(47,125,255,.14); }
+    .stat.gold { border-color: rgba(215,166,64,.32); background: rgba(215,166,64,.14); }
+    .stat.gray { border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.05); }
 
     .hero {
       position: relative;
@@ -163,14 +146,8 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background:
-        linear-gradient(135deg, rgba(18, 26, 44, 0.95), rgba(7, 10, 18, 0.96)),
-        repeating-linear-gradient(
-          45deg,
-          rgba(255, 255, 255, 0.025) 0,
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px,
-          transparent 10px
-        );
+        linear-gradient(135deg, rgba(18,26,44,.95), rgba(7,10,18,.96)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0, rgba(255,255,255,.025) 1px, transparent 1px, transparent 10px);
       box-shadow: var(--shadow);
     }
 
@@ -182,7 +159,7 @@
       width: 340px;
       height: 340px;
       border-radius: 999px;
-      background: rgba(47, 125, 255, 0.14);
+      background: rgba(47,125,255,.14);
       filter: blur(8px);
     }
 
@@ -195,18 +172,18 @@
       display: inline-block;
       margin-bottom: 13px;
       color: #cfe0ff;
-      font-size: 0.78rem;
+      font-size: .78rem;
       font-weight: 900;
-      letter-spacing: 0.16em;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
 
     .hero h2 {
-      max-width: 940px;
+      max-width: 980px;
       margin-bottom: 18px;
       font-size: clamp(2.25rem, 5vw, 5rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
+      line-height: .92;
+      letter-spacing: -.06em;
     }
 
     .hero h2 span {
@@ -218,7 +195,7 @@
     }
 
     .hero p {
-      max-width: 820px;
+      max-width: 860px;
       color: var(--muted);
       font-size: 1.03rem;
       line-height: 1.75;
@@ -226,7 +203,7 @@
 
     .controls {
       display: grid;
-      grid-template-columns: 1.55fr 0.85fr 0.85fr 0.85fr 0.85fr;
+      grid-template-columns: 1.55fr .85fr .85fr .85fr .85fr;
       gap: 12px;
       margin: 24px 0 18px;
     }
@@ -238,7 +215,7 @@
       border: 1px solid var(--line);
       outline: none;
       color: var(--text);
-      background: rgba(17, 26, 44, 0.92);
+      background: rgba(17,26,44,.92);
       border-radius: 16px;
       padding: 14px 15px;
     }
@@ -250,8 +227,8 @@
     .search-box input:focus,
     .controls select:focus,
     .per-page select:focus {
-      border-color: rgba(47, 125, 255, 0.65);
-      box-shadow: 0 0 0 4px rgba(47, 125, 255, 0.13);
+      border-color: rgba(47,125,255,.65);
+      box-shadow: 0 0 0 4px rgba(47,125,255,.13);
     }
 
     .catalog-toolbar {
@@ -264,7 +241,7 @@
 
     .results-info {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: .95rem;
     }
 
     .results-info strong {
@@ -276,7 +253,7 @@
       align-items: center;
       gap: 10px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: .9rem;
     }
 
     .per-page select {
@@ -296,15 +273,15 @@
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(24, 36, 58, 0.98), rgba(11, 17, 30, 0.98));
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.29);
-      transition: 0.22s ease;
+      background: linear-gradient(180deg, rgba(24,36,58,.98), rgba(11,17,30,.98));
+      box-shadow: 0 18px 44px rgba(0,0,0,.29);
+      transition: .22s ease;
     }
 
     .vehicle-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(255, 255, 255, 0.22);
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.43);
+      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 28px 70px rgba(0,0,0,.43);
     }
 
     .vehicle-card::before {
@@ -315,16 +292,14 @@
       border-radius: inherit;
     }
 
-    .vehicle-card.lspd::before {
-      box-shadow: inset 0 3px 0 var(--lspd);
-    }
-
-    .vehicle-card.lssd::before {
-      box-shadow: inset 0 3px 0 var(--lssd);
-    }
+    .vehicle-card.lspd::before { box-shadow: inset 0 3px 0 var(--lspd); }
+    .vehicle-card.lssd::before { box-shadow: inset 0 3px 0 var(--lssd); }
+    .vehicle-card.sahp::before { box-shadow: inset 0 3px 0 var(--sahp); }
+    .vehicle-card.federal::before { box-shadow: inset 0 3px 0 var(--federal); }
+    .vehicle-card.swat::before { box-shadow: inset 0 3px 0 var(--swat); }
 
     .vehicle-photo {
-      min-height: 190px;
+      min-height: 205px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -332,7 +307,7 @@
       padding: 14px;
       border-bottom: 1px solid var(--line);
       background:
-        linear-gradient(180deg, transparent 36%, rgba(5, 7, 13, 0.8)),
+        linear-gradient(180deg, transparent 38%, rgba(5,7,13,.84)),
         var(--photo),
         linear-gradient(135deg, #141c2e, #080c16);
       background-size: cover;
@@ -345,36 +320,30 @@
       z-index: 2;
       padding: 7px 10px;
       border-radius: 999px;
-      font-size: 0.72rem;
+      font-size: .72rem;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       backdrop-filter: blur(8px);
     }
 
-    .vehicle-badge.lspd {
-      color: #dce9ff;
-      border: 1px solid rgba(47, 125, 255, 0.34);
-      background: rgba(47, 125, 255, 0.2);
-    }
-
-    .vehicle-badge.lssd {
-      color: #ffe9ae;
-      border: 1px solid rgba(215, 166, 64, 0.36);
-      background: rgba(215, 166, 64, 0.2);
-    }
+    .vehicle-badge.lspd { color: #dce9ff; border: 1px solid rgba(47,125,255,.34); background: rgba(47,125,255,.2); }
+    .vehicle-badge.lssd { color: #ffe9ae; border: 1px solid rgba(215,166,64,.36); background: rgba(215,166,64,.2); }
+    .vehicle-badge.sahp { color: #d8f7ff; border: 1px solid rgba(81,214,255,.36); background: rgba(81,214,255,.16); }
+    .vehicle-badge.federal { color: #eadfff; border: 1px solid rgba(181,140,255,.36); background: rgba(181,140,255,.18); }
+    .vehicle-badge.swat { color: #ffd3d3; border: 1px solid rgba(255,91,91,.36); background: rgba(255,91,91,.18); }
 
     .status-badge {
       color: #d9ffef;
-      border: 1px solid rgba(62, 228, 159, 0.3);
-      background: rgba(62, 228, 159, 0.14);
+      border: 1px solid rgba(62,228,159,.3);
+      background: rgba(62,228,159,.14);
     }
 
     .status-badge.restricted,
     .status-badge.command-only {
       color: #ffd3d3;
-      border-color: rgba(255, 91, 91, 0.34);
-      background: rgba(255, 91, 91, 0.15);
+      border-color: rgba(255,91,91,.34);
+      background: rgba(255,91,91,.15);
     }
 
     .vehicle-content {
@@ -384,9 +353,9 @@
     .vehicle-meta {
       margin-bottom: 8px;
       color: var(--muted);
-      font-size: 0.77rem;
+      font-size: .77rem;
       font-weight: 900;
-      letter-spacing: 0.09em;
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
 
@@ -394,14 +363,14 @@
       margin-bottom: 8px;
       font-size: 1.22rem;
       line-height: 1.15;
-      letter-spacing: -0.025em;
+      letter-spacing: -.025em;
     }
 
     .vehicle-desc {
       min-height: 66px;
       margin-bottom: 16px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: .92rem;
       line-height: 1.55;
     }
 
@@ -416,21 +385,21 @@
       padding: 10px;
       border: 1px solid var(--line);
       border-radius: 13px;
-      background: rgba(255, 255, 255, 0.045);
+      background: rgba(255,255,255,.045);
     }
 
     .spec small {
       display: block;
       margin-bottom: 3px;
       color: var(--muted);
-      font-size: 0.68rem;
+      font-size: .68rem;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
 
     .spec strong {
-      font-size: 0.88rem;
+      font-size: .88rem;
     }
 
     .price-row {
@@ -446,16 +415,16 @@
       display: block;
       margin-bottom: 2px;
       color: var(--muted);
-      font-size: 0.7rem;
+      font-size: .7rem;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
 
     .price {
-      font-size: 1.32rem;
+      font-size: 1.38rem;
       font-weight: 900;
-      letter-spacing: -0.04em;
+      letter-spacing: -.04em;
     }
 
     .detail-btn {
@@ -463,27 +432,17 @@
       border-radius: 13px;
       padding: 11px 13px;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.07);
-      font-size: 0.76rem;
+      background: rgba(255,255,255,.07);
+      font-size: .76rem;
       font-weight: 900;
-      letter-spacing: 0.07em;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      transition: 0.18s ease;
+      transition: .18s ease;
     }
 
     .detail-btn:hover {
       transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.13);
-    }
-
-    .vehicle-card.lspd .detail-btn {
-      border-color: rgba(47, 125, 255, 0.3);
-      background: rgba(47, 125, 255, 0.14);
-    }
-
-    .vehicle-card.lssd .detail-btn {
-      border-color: rgba(215, 166, 64, 0.32);
-      background: rgba(215, 166, 64, 0.14);
+      background: rgba(255,255,255,.13);
     }
 
     .empty-state {
@@ -491,9 +450,9 @@
       margin-top: 20px;
       padding: 40px 20px;
       text-align: center;
-      border: 1px dashed rgba(255, 255, 255, 0.18);
+      border: 1px dashed rgba(255,255,255,.18);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.035);
+      background: rgba(255,255,255,.035);
     }
 
     .empty-state h3 {
@@ -519,28 +478,28 @@
       border: 1px solid var(--line);
       border-radius: 13px;
       color: var(--text);
-      background: rgba(17, 26, 44, 0.9);
+      background: rgba(17,26,44,.9);
       font-weight: 900;
-      transition: 0.18s ease;
+      transition: .18s ease;
     }
 
     .page-btn:hover,
     .page-btn.active {
-      border-color: rgba(255, 255, 255, 0.22);
-      background: linear-gradient(135deg, rgba(47, 125, 255, 0.36), rgba(215, 166, 64, 0.26));
+      border-color: rgba(255,255,255,.22);
+      background: linear-gradient(135deg, rgba(47,125,255,.36), rgba(215,166,64,.26));
     }
 
     .page-btn:disabled {
-      opacity: 0.35;
+      opacity: .35;
       cursor: not-allowed;
     }
 
     .help-box {
       margin-top: 32px;
       padding: 22px;
-      border: 1px solid rgba(47, 125, 255, 0.26);
+      border: 1px solid rgba(47,125,255,.26);
       border-radius: var(--radius);
-      background: rgba(47, 125, 255, 0.08);
+      background: rgba(47,125,255,.08);
       color: #dce9ff;
       line-height: 1.7;
     }
@@ -559,16 +518,16 @@
       padding: 16px;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(0, 0, 0, 0.24);
+      background: rgba(0,0,0,.24);
       color: white;
-      font-size: 0.88rem;
+      font-size: .88rem;
     }
 
     .footer {
       margin-top: 34px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: .9rem;
     }
 
     .modal {
@@ -588,19 +547,19 @@
     .modal-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.72);
+      background: rgba(0,0,0,.72);
       backdrop-filter: blur(8px);
     }
 
     .modal-box {
       position: relative;
       z-index: 2;
-      width: min(920px, 100%);
+      width: min(940px, 100%);
       max-height: calc(100vh - 44px);
       overflow: auto;
       border: 1px solid var(--line);
       border-radius: 26px;
-      background: linear-gradient(180deg, rgba(24, 36, 58, 0.98), rgba(8, 12, 22, 0.98));
+      background: linear-gradient(180deg, rgba(24,36,58,.98), rgba(8,12,22,.98));
       box-shadow: var(--shadow);
     }
 
@@ -614,15 +573,15 @@
       border: 1px solid var(--line);
       border-radius: 999px;
       color: white;
-      background: rgba(0, 0, 0, 0.38);
+      background: rgba(0,0,0,.38);
       font-size: 1.5rem;
       line-height: 1;
     }
 
     .modal-image {
-      min-height: 330px;
+      min-height: 350px;
       background:
-        linear-gradient(180deg, transparent 35%, rgba(5, 7, 13, 0.82)),
+        linear-gradient(180deg, transparent 35%, rgba(5,7,13,.82)),
         var(--modal-photo),
         linear-gradient(135deg, #141c2e, #080c16);
       background-size: cover;
@@ -644,18 +603,18 @@
     .modal-tags span {
       padding: 8px 11px;
       border-radius: 999px;
-      font-size: 0.75rem;
+      font-size: .75rem;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.075);
+      background: rgba(255,255,255,.075);
       border: 1px solid var(--line);
     }
 
     .modal-content h2 {
       font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1;
-      letter-spacing: -0.05em;
+      letter-spacing: -.05em;
       margin-bottom: 12px;
     }
 
@@ -675,15 +634,15 @@
       padding: 15px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: rgba(255, 255, 255, 0.045);
+      background: rgba(255,255,255,.045);
     }
 
     .modal-specs small {
       display: block;
       color: var(--muted);
-      font-size: 0.72rem;
+      font-size: .72rem;
       font-weight: 900;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       margin-bottom: 4px;
     }
@@ -693,13 +652,8 @@
     }
 
     @media (max-width: 1250px) {
-      .vehicle-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .controls {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+      .vehicle-grid { grid-template-columns: repeat(3, 1fr); }
+      .controls { grid-template-columns: 1fr 1fr 1fr; }
     }
 
     @media (max-width: 900px) {
@@ -727,7 +681,7 @@
 
     @media (max-width: 620px) {
       .page {
-        width: min(100% - 24px, 1540px);
+        width: min(100% - 24px, 1600px);
         padding-top: 18px;
       }
 
@@ -787,14 +741,12 @@
 
 <body>
   <main class="page">
-
     <header class="topbar">
       <div class="brand">
         <div class="brand-logo">PD</div>
-
         <div>
-          <h1>LSPD / LSSD Vehicle Catalog</h1>
-          <p>Fleet database · FiveM RP</p>
+          <h1>Vehicle Catalog</h1>
+          <p>LSPD / LSSD / SAHP / Federal · FiveM RP</p>
         </div>
       </div>
 
@@ -803,51 +755,40 @@
           <span id="totalCount">0</span>
           <small>Vozidiel</small>
         </div>
-
         <div class="stat blue">
           <span id="lspdCount">0</span>
           <small>LSPD</small>
         </div>
-
         <div class="stat gold">
           <span id="lssdCount">0</span>
           <small>LSSD</small>
+        </div>
+        <div class="stat gray">
+          <span id="otherCount">0</span>
+          <small>Ostatné</small>
         </div>
       </div>
     </header>
 
     <section class="hero">
       <div class="hero-content">
-        <span class="eyebrow">Official Fleet Catalog</span>
-
-        <h2>
-          Katalóg vozidiel pre
-          <span>LSPD</span>
-          a
-          <span class="gold-text">LSSD</span>
-        </h2>
-
+        <span class="eyebrow">Imported from AUTISKA.zip</span>
+        <h2>Katalóg vozidiel s cenami z <span>názvov fotiek</span></h2>
         <p>
-          Moderný katalóg pre 100+ vozidiel. Autá pridávaš iba do poľa
-          <strong>vehicles</strong> v tomto jednom HTML súbore.
-          Stránka automaticky rieši vyhľadávanie, filtrovanie, zoradenie a stránkovanie.
+          Tento súbor už obsahuje všetky vozidlá z uploadnutého ZIPu. Ceny typu <strong>40K</strong>,
+          <strong>39K</strong> a podobne boli prebraté z názvov obrázkov. Fotky sú v priečinku
+          <strong>images</strong>.
         </p>
       </div>
     </section>
 
     <section class="controls">
       <div class="search-box">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Hľadať vozidlo, kód, kategóriu, použitie..."
-        />
+        <input type="text" id="searchInput" placeholder="Hľadať vozidlo, kód, kategóriu, použitie..." />
       </div>
 
       <select id="departmentFilter">
         <option value="all">Všetky oddelenia</option>
-        <option value="LSPD">LSPD</option>
-        <option value="LSSD">LSSD</option>
       </select>
 
       <select id="categoryFilter">
@@ -856,9 +797,6 @@
 
       <select id="statusFilter">
         <option value="all">Všetky statusy</option>
-        <option value="Available">Available</option>
-        <option value="Restricted">Restricted</option>
-        <option value="Command Only">Command Only</option>
       </select>
 
       <select id="sortFilter">
@@ -872,13 +810,10 @@
     </section>
 
     <section class="catalog-toolbar">
-      <div class="results-info" id="resultsInfo">
-        Zobrazené: 0 vozidiel
-      </div>
+      <div class="results-info" id="resultsInfo">Zobrazené: 0 vozidiel</div>
 
       <div class="per-page">
         <label for="perPageSelect">Na stránku:</label>
-
         <select id="perPageSelect">
           <option value="12">12</option>
           <option value="24" selected>24</option>
@@ -898,32 +833,29 @@
     <nav class="pagination" id="pagination"></nav>
 
     <section class="help-box">
-      <h3>Ako pridať ďalšie auto?</h3>
-
+      <h3>Úprava cien a fotiek</h3>
       <p>
-        V tomto súbore nájdi časť <strong>const vehicles = [...]</strong>.
-        Skopíruj jeden blok auta, vlož ho pod ostatné a prepíš údaje.
+        Ceny meníš dole v poli <strong>vehicles</strong> cez <code>price</code>.
+        Fotku meníš cez <code>image</code>. Nové auto pridáš skopírovaním jedného objektu.
       </p>
-
       <pre><code>{
-  code: "LSPD-021",
+  code: "LSPD-094",
   department: "LSPD",
   name: "Názov auta",
   category: "Patrol",
-  price: 100000,
-  image: "images/lspd/nazov-fotky.png",
+  price: 40000,
+  image: "images/nazov-fotky.png",
   status: "Available",
   seats: "2-4",
   speed: "Stredná",
-  usage: "Bežná služba",
-  description: "Krátky popis vozidla."
+  usage: "Patrol",
+  description: "Popis vozidla."
 },</code></pre>
     </section>
 
     <footer class="footer">
-      LSPD / LSSD Vehicle Catalog © 2026 · FiveM RP Fleet System
+      Vehicle Catalog © 2026 · FiveM RP Fleet System
     </footer>
-
   </main>
 
   <div class="modal" id="vehicleModal">
@@ -931,7 +863,6 @@
 
     <div class="modal-box">
       <button class="modal-close" data-close-modal>×</button>
-
       <div class="modal-image" id="modalImage"></div>
 
       <div class="modal-content">
@@ -944,35 +875,13 @@
         <p id="modalDescription"></p>
 
         <div class="modal-specs">
-          <div>
-            <small>Kód</small>
-            <strong id="modalCode"></strong>
-          </div>
-
-          <div>
-            <small>Kategória</small>
-            <strong id="modalCategory"></strong>
-          </div>
-
-          <div>
-            <small>Posádka</small>
-            <strong id="modalSeats"></strong>
-          </div>
-
-          <div>
-            <small>Rýchlosť</small>
-            <strong id="modalSpeed"></strong>
-          </div>
-
-          <div>
-            <small>Využitie</small>
-            <strong id="modalUsage"></strong>
-          </div>
-
-          <div>
-            <small>Cena</small>
-            <strong id="modalPrice"></strong>
-          </div>
+          <div><small>Kód</small><strong id="modalCode"></strong></div>
+          <div><small>Kategória</small><strong id="modalCategory"></strong></div>
+          <div><small>Posádka</small><strong id="modalSeats"></strong></div>
+          <div><small>Rýchlosť</small><strong id="modalSpeed"></strong></div>
+          <div><small>Využitie</small><strong id="modalUsage"></strong></div>
+          <div><small>Cena</small><strong id="modalPrice"></strong></div>
+          <div><small>Súbor</small><strong id="modalFile"></strong></div>
         </div>
       </div>
     </div>
@@ -980,294 +889,1309 @@
 
   <script>
     const vehicles = [
-      /*
-        ŠABLÓNA NA NOVÉ AUTO:
-
-        {
-          code: "LSPD-001",
-          department: "LSPD",
-          name: "Police Cruiser",
-          category: "Patrol",
-          price: 85000,
-          image: "images/lspd/police-cruiser.png",
-          status: "Available",
-          seats: "2-4",
-          speed: "Stredná",
-          usage: "Bežná služba",
-          description: "Krátky popis vozidla."
-        },
-
-        Fotky si daj napríklad do:
-        images/lspd/
-        images/lssd/
-
-        Cena je číslo bez $.
-        Napríklad:
-        price: 85000
-      */
-
-      {
-        code: "LSPD-001",
-        department: "LSPD",
-        name: "Police Cruiser",
-        category: "Patrol",
-        price: 85000,
-        image: "images/lspd/police-cruiser.png",
-        status: "Available",
-        seats: "2-4",
-        speed: "Stredná",
-        usage: "Bežná služba",
-        description: "Základné hliadkové vozidlo pre bežné 911 volania a mestské patroly."
-      },
-      {
-        code: "LSPD-002",
-        department: "LSPD",
-        name: "Police Interceptor",
-        category: "Pursuit",
-        price: 125000,
-        image: "images/lspd/interceptor.png",
-        status: "Available",
-        seats: "2",
-        speed: "Vysoká",
-        usage: "Chase",
-        description: "Rýchlejšia jednotka na prenasledovanie, dopravné zásahy a dynamické patroly."
-      },
-      {
-        code: "LSPD-003",
-        department: "LSPD",
-        name: "Police SUV",
-        category: "SUV",
-        price: 145000,
-        image: "images/lspd/suv.png",
-        status: "Available",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Supervisor",
-        description: "Väčšie vozidlo pre supervisorov, jednotky s výbavou a transport osôb."
-      },
-      {
-        code: "LSPD-004",
-        department: "LSPD",
-        name: "High Speed Unit",
-        category: "HSU",
-        price: 210000,
-        image: "images/lspd/high-speed-unit.png",
-        status: "Restricted",
-        seats: "2",
-        speed: "Veľmi vysoká",
-        usage: "Interceptor",
-        description: "Výkonné vozidlo pre špeciálne prenasledovania a zásahy proti rýchlym vozidlám."
-      },
-      {
-        code: "LSPD-005",
-        department: "LSPD",
-        name: "Police Motorcycle",
-        category: "Motorcycle",
-        price: 65000,
-        image: "images/lspd/motorcycle.png",
-        status: "Available",
-        seats: "1",
-        speed: "Vysoká",
-        usage: "Traffic",
-        description: "Motorka pre dopravné jednotky, sprievody a rýchly presun mestom."
-      },
-      {
-        code: "LSPD-006",
-        department: "LSPD",
-        name: "SWAT Van",
-        category: "SWAT",
-        price: 320000,
-        image: "images/lspd/swat-van.png",
-        status: "Restricted",
-        seats: "6",
-        speed: "Nízka",
-        usage: "Tactical",
-        description: "Ťažké taktické vozidlo pre vysoko rizikové zásahy a špeciálne jednotky."
-      },
-      {
-        code: "LSPD-007",
-        department: "LSPD",
-        name: "Unmarked Cruiser",
-        category: "Unmarked",
-        price: 155000,
-        image: "images/lspd/unmarked-cruiser.png",
-        status: "Restricted",
-        seats: "2-4",
-        speed: "Vysoká",
-        usage: "Detective",
-        description: "Nenápadné vozidlo pre detektívov, vyšetrovanie a sledovanie."
-      },
-      {
-        code: "LSPD-008",
-        department: "LSPD",
-        name: "K9 Unit SUV",
-        category: "K9",
-        price: 175000,
-        image: "images/lspd/k9-suv.png",
-        status: "Available",
-        seats: "2 + K9",
-        speed: "Stredná",
-        usage: "K9",
-        description: "SUV určené pre K9 jednotku, služobného psa a potrebnú výbavu."
-      },
-      {
-        code: "LSPD-009",
-        department: "LSPD",
-        name: "Detective Sedan",
-        category: "Detective",
-        price: 135000,
-        image: "images/lspd/detective-sedan.png",
-        status: "Restricted",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Investigation",
-        description: "Civilnejšie vozidlo pre vyšetrovanie a nenápadné presuny."
-      },
-      {
-        code: "LSPD-010",
-        department: "LSPD",
-        name: "Command SUV",
-        category: "Command",
-        price: 240000,
-        image: "images/lspd/command-suv.png",
-        status: "Command Only",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Command",
-        description: "Vozidlo pre velenie, koordináciu jednotiek a riadenie väčších zásahov."
-      },
-
-      {
-        code: "LSSD-001",
-        department: "LSSD",
-        name: "Sheriff Cruiser",
-        category: "Patrol",
-        price: 88000,
-        image: "images/lssd/sheriff-cruiser.png",
-        status: "Available",
-        seats: "2-4",
-        speed: "Stredná",
-        usage: "County Patrol",
-        description: "Základné sheriff vozidlo pre county patroly a bežné výjazdy."
-      },
-      {
-        code: "LSSD-002",
-        department: "LSSD",
-        name: "Sheriff SUV",
-        category: "SUV",
-        price: 155000,
-        image: "images/lssd/sheriff-suv.png",
-        status: "Available",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Rural Patrol",
-        description: "Stabilné vozidlo vhodné mimo mesto, do terénu a na dlhšie výjazdy."
-      },
-      {
-        code: "LSSD-003",
-        department: "LSSD",
-        name: "Off-Road Unit",
-        category: "Off-Road",
-        price: 135000,
-        image: "images/lssd/offroad-unit.png",
-        status: "Available",
-        seats: "2",
-        speed: "Stredná",
-        usage: "Terrain",
-        description: "Terénna jednotka pre Blaine County, púšť, farmy, hory a ťažko dostupné oblasti."
-      },
-      {
-        code: "LSSD-004",
-        department: "LSSD",
-        name: "Prisoner Transport",
-        category: "Transport",
-        price: 180000,
-        image: "images/lssd/prisoner-transport.png",
-        status: "Available",
-        seats: "2 + zadržaní",
-        speed: "Nízka",
-        usage: "Transport",
-        description: "Vozidlo na bezpečný prevoz zadržaných osôb medzi stanicou, väznicou a súdom."
-      },
-      {
-        code: "LSSD-005",
-        department: "LSSD",
-        name: "Sheriff Motorcycle",
-        category: "Motorcycle",
-        price: 68000,
-        image: "images/lssd/motorcycle.png",
-        status: "Available",
-        seats: "1",
-        speed: "Vysoká",
-        usage: "Traffic",
-        description: "Motorka pre dopravnú kontrolu, sprievody a county traffic enforcement."
-      },
-      {
-        code: "LSSD-006",
-        department: "LSSD",
-        name: "Command Unit",
-        category: "Command",
-        price: 240000,
-        image: "images/lssd/command-unit.png",
-        status: "Command Only",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Supervisor",
-        description: "Vozidlo pre velenie zásahu, riadenie operácií a koordináciu jednotiek."
-      },
-      {
-        code: "LSSD-007",
-        department: "LSSD",
-        name: "Search & Rescue SUV",
-        category: "Rescue",
-        price: 190000,
-        image: "images/lssd/search-rescue-suv.png",
-        status: "Available",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Search",
-        description: "Vozidlo pre pátracie akcie, záchranné operácie a horské oblasti."
-      },
-      {
-        code: "LSSD-008",
-        department: "LSSD",
-        name: "Unmarked Sheriff Unit",
-        category: "Unmarked",
-        price: 165000,
-        image: "images/lssd/unmarked-sheriff.png",
-        status: "Restricted",
-        seats: "2-4",
-        speed: "Vysoká",
-        usage: "Detective",
-        description: "Nenápadné sheriff vozidlo pre vyšetrovanie, sledovanie a plain-clothes jednotky."
-      },
-      {
-        code: "LSSD-009",
-        department: "LSSD",
-        name: "Park Ranger Unit",
-        category: "Ranger",
-        price: 125000,
-        image: "images/lssd/park-ranger-unit.png",
-        status: "Available",
-        seats: "2-4",
-        speed: "Stredná",
-        usage: "Ranger",
-        description: "Vozidlo vhodné pre parky, lesy, hory a odľahlejšie oblasti."
-      },
-      {
-        code: "LSSD-010",
-        department: "LSSD",
-        name: "Heavy Duty Pickup",
-        category: "Utility",
-        price: 175000,
-        image: "images/lssd/heavy-duty-pickup.png",
-        status: "Available",
-        seats: "4",
-        speed: "Stredná",
-        usage: "Utility",
-        description: "Pickup pre náročnejší terén, prevoz vybavenia a county zásahy."
-      }
-    ];
+    {
+        "code": "LSPD-001",
+        "department": "LSPD",
+        "name": "14 SUV RB",
+        "category": "SUV",
+        "price": 69000,
+        "image": "images/14suvrb 69K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "14 SUV RB — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "14suvrb 69K.png"
+    },
+    {
+        "code": "SWAT-002",
+        "department": "SWAT",
+        "name": "Bearcat",
+        "category": "Tactical",
+        "price": 65000,
+        "image": "images/Bearcat 65K.png",
+        "status": "Restricted",
+        "seats": "4-8",
+        "speed": "Nízka",
+        "usage": "Tactical",
+        "description": "Bearcat — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Bearcat 65K.png"
+    },
+    {
+        "code": "LSPD-003",
+        "department": "LSPD",
+        "name": "Buffalo SF Police",
+        "category": "Interceptor",
+        "price": 35000,
+        "image": "images/buffalosfpol 35K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Buffalo SF Police — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "buffalosfpol 35K.png"
+    },
+    {
+        "code": "LSPD-004",
+        "department": "LSPD",
+        "name": "Centurion LSPD",
+        "category": "SUV",
+        "price": 68000,
+        "image": "images/centurionlspd 68K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Centurion LSPD — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "centurionlspd 68K.png"
+    },
+    {
+        "code": "LSPD-005",
+        "department": "LSPD",
+        "name": "Detective Scout Unmarked",
+        "category": "Unmarked",
+        "price": 84000,
+        "image": "images/dnscoutun 84K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "Detective Scout Unmarked — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "dnscoutun 84K.png"
+    },
+    {
+        "code": "FED-006",
+        "department": "FEDERAL",
+        "name": "FBI",
+        "category": "Patrol",
+        "price": 30000,
+        "image": "images/Fbi 30K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Federal",
+        "description": "FBI — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Fbi 30K.png"
+    },
+    {
+        "code": "FED-007",
+        "department": "FEDERAL",
+        "name": "FBI 2",
+        "category": "Patrol",
+        "price": 40000,
+        "image": "images/Fbi2 40K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Federal",
+        "description": "FBI 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Fbi2 40K.png"
+    },
+    {
+        "code": "FED-008",
+        "department": "FEDERAL",
+        "name": "FIB Buffalo SX",
+        "category": "Interceptor",
+        "price": 84000,
+        "image": "images/Fibbuffalosx 84K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Federal",
+        "description": "FIB Buffalo SX — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Fibbuffalosx 84K.png"
+    },
+    {
+        "code": "SAHP-009",
+        "department": "SAHP",
+        "name": "Highway Patrol Buffalo",
+        "category": "Interceptor",
+        "price": 35000,
+        "image": "images/hpbuffalo 35K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Highway Patrol",
+        "description": "Highway Patrol Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "hpbuffalo 35K.png"
+    },
+    {
+        "code": "SAHP-010",
+        "department": "SAHP",
+        "name": "Highway Patrol Unmarked Buffalo",
+        "category": "Unmarked",
+        "price": 76000,
+        "image": "images/hpumkbuffalo 76K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Highway Patrol",
+        "description": "Highway Patrol Unmarked Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "hpumkbuffalo 76K.png"
+    },
+    {
+        "code": "LSPD-011",
+        "department": "LSPD",
+        "name": "LSPD Buffalo STX Unmarked",
+        "category": "Interceptor",
+        "price": 84000,
+        "image": "images/lspdbuffalostxum 84K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "LSPD Buffalo STX Unmarked — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "lspdbuffalostxum 84K.png"
+    },
+    {
+        "code": "LSPD-012",
+        "department": "LSPD",
+        "name": "LSPD Buffalo Unmarked",
+        "category": "Unmarked",
+        "price": 80000,
+        "image": "images/lspdbuffsumk 80K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "LSPD Buffalo Unmarked — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "lspdbuffsumk 80K.png"
+    },
+    {
+        "code": "LSPD-013",
+        "department": "LSPD",
+        "name": "LSPD Caracara",
+        "category": "Interceptor",
+        "price": 38000,
+        "image": "images/lspdcara 38K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "LSPD Caracara — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "lspdcara 38K.png"
+    },
+    {
+        "code": "LSPD-014",
+        "department": "LSPD",
+        "name": "LSPD Draiden",
+        "category": "Interceptor",
+        "price": 40000,
+        "image": "images/lspddraiden 40K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "LSPD Draiden — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "lspddraiden 40K.png"
+    },
+    {
+        "code": "LSSD-015",
+        "department": "LSSD",
+        "name": "LSSD Alamo",
+        "category": "SUV",
+        "price": 36000,
+        "image": "images/lssdalamo 36K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "LSSD Alamo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "lssdalamo 36K.png"
+    },
+    {
+        "code": "LSSD-016",
+        "department": "LSSD",
+        "name": "LSSD Buffalo SX",
+        "category": "Interceptor",
+        "price": 24000,
+        "image": "images/Lssdbuffalosx 24K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "LSSD Buffalo SX — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Lssdbuffalosx 24K.png"
+    },
+    {
+        "code": "LSSD-017",
+        "department": "LSSD",
+        "name": "LSSD Scout",
+        "category": "SUV",
+        "price": 34000,
+        "image": "images/Lssdnscout 34K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "LSSD Scout — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Lssdnscout 34K.png"
+    },
+    {
+        "code": "LSPD-018",
+        "department": "LSPD",
+        "name": "MOC Packer",
+        "category": "Transport",
+        "price": 60000,
+        "image": "images/Mocpacker 60K.png",
+        "status": "Restricted",
+        "seats": "2 + transport",
+        "speed": "Nízka",
+        "usage": "Transport",
+        "description": "MOC Packer — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Mocpacker 60K.png"
+    },
+    {
+        "code": "LSPD-019",
+        "department": "LSPD",
+        "name": "NK Scout",
+        "category": "SUV",
+        "price": 60000,
+        "image": "images/nkscout 60K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "NK Scout — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "nkscout 60K.png"
+    },
+    {
+        "code": "LSPD-020",
+        "department": "LSPD",
+        "name": "NK Scout 2020",
+        "category": "SUV",
+        "price": 36000,
+        "image": "images/nkscout2020 36K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "NK Scout 2020 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "nkscout2020 36K.png"
+    },
+    {
+        "code": "LSPD-021",
+        "department": "LSPD",
+        "name": "N Sandstorm Marked",
+        "category": "SUV",
+        "price": 54000,
+        "image": "images/Nsandstormmk 54K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "N Sandstorm Marked — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Nsandstormmk 54K.png"
+    },
+    {
+        "code": "LSPD-022",
+        "department": "LSPD",
+        "name": "Scout LSPD",
+        "category": "SUV",
+        "price": 18000,
+        "image": "images/nscoutilspd 18K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Scout LSPD — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "nscoutilspd 18K.png"
+    },
+    {
+        "code": "LSPD-023",
+        "department": "LSPD",
+        "name": "PCC JV",
+        "category": "Patrol",
+        "price": 60000,
+        "image": "images/Pccjv 60K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "PCC JV — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Pccjv 60K.png"
+    },
+    {
+        "code": "LSPD-024",
+        "department": "LSPD",
+        "name": "PD Buffalo",
+        "category": "Interceptor",
+        "price": 29000,
+        "image": "images/pdbuffalo 29K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "PD Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "pdbuffalo 29K.png"
+    },
+    {
+        "code": "LSPD-025",
+        "department": "LSPD",
+        "name": "PD GLX JV",
+        "category": "Patrol",
+        "price": 16000,
+        "image": "images/pdglxjv 16K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "PD GLX JV — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "pdglxjv 16K.png"
+    },
+    {
+        "code": "LSPD-026",
+        "department": "LSPD",
+        "name": "PD STX",
+        "category": "Interceptor",
+        "price": 25000,
+        "image": "images/pdstx 25K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "PD STX — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "pdstx 25K.png"
+    },
+    {
+        "code": "LSPD-027",
+        "department": "LSPD",
+        "name": "PD Unmarked Buffalo",
+        "category": "Unmarked",
+        "price": 76000,
+        "image": "images/PDUMkBufallo 76K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "PD Unmarked Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "PDUMkBufallo 76K.png"
+    },
+    {
+        "code": "LSPD-028",
+        "department": "LSPD",
+        "name": "Police Alamo",
+        "category": "SUV",
+        "price": 10000,
+        "image": "images/polalamo 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Police Alamo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polalamo 10K.png"
+    },
+    {
+        "code": "LSPD-029",
+        "department": "LSPD",
+        "name": "Police Aleutian",
+        "category": "SUV",
+        "price": 17000,
+        "image": "images/polaleutian 17K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Police Aleutian — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polaleutian 17K.png"
+    },
+    {
+        "code": "LSPD-030",
+        "department": "LSPD",
+        "name": "Police BF400",
+        "category": "Motorcycle",
+        "price": 18000,
+        "image": "images/polbf400 18K.png",
+        "status": "Available",
+        "seats": "1",
+        "speed": "Vysoká",
+        "usage": "Traffic",
+        "description": "Police BF400 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polbf400 18K.png"
+    },
+    {
+        "code": "LSPD-031",
+        "department": "LSPD",
+        "name": "Police Bike B",
+        "category": "Motorcycle",
+        "price": 18000,
+        "image": "images/polbikeb 18K.png",
+        "status": "Available",
+        "seats": "1",
+        "speed": "Vysoká",
+        "usage": "Traffic",
+        "description": "Police Bike B — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polbikeb 18K.png"
+    },
+    {
+        "code": "LSPD-032",
+        "department": "LSPD",
+        "name": "Police Bike B2",
+        "category": "Motorcycle",
+        "price": 19000,
+        "image": "images/Polbikeb2 19K.png",
+        "status": "Available",
+        "seats": "1",
+        "speed": "Vysoká",
+        "usage": "Traffic",
+        "description": "Police Bike B2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Polbikeb2 19K.png"
+    },
+    {
+        "code": "LSPD-033",
+        "department": "LSPD",
+        "name": "Police Buffalo LOS",
+        "category": "Interceptor",
+        "price": 25000,
+        "image": "images/polbuffalolos 25K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Buffalo LOS — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polbuffalolos 25K.png"
+    },
+    {
+        "code": "LSPD-034",
+        "department": "LSPD",
+        "name": "Police Buffalo Slicktop",
+        "category": "Unmarked",
+        "price": 84000,
+        "image": "images/polbuffaloslick 84K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "Police Buffalo Slicktop — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polbuffaloslick 84K.png"
+    },
+    {
+        "code": "LSPD-035",
+        "department": "LSPD",
+        "name": "Police Caracara",
+        "category": "Interceptor",
+        "price": 30000,
+        "image": "images/Polcara 30K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Caracara — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Polcara 30K.png"
+    },
+    {
+        "code": "LSPD-036",
+        "department": "LSPD",
+        "name": "Police CQ4",
+        "category": "Interceptor",
+        "price": 84000,
+        "image": "images/Polcq4 84K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police CQ4 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Polcq4 84K.png"
+    },
+    {
+        "code": "LSPD-037",
+        "department": "LSPD",
+        "name": "Police Dominator GTX",
+        "category": "Interceptor",
+        "price": 19000,
+        "image": "images/Poldomgtx 19K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Dominator GTX — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Poldomgtx 19K.png"
+    },
+    {
+        "code": "LSPD-038",
+        "department": "LSPD",
+        "name": "Police Dominator 10",
+        "category": "Interceptor",
+        "price": 11000,
+        "image": "images/poldominator10 11K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Dominator 10 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "poldominator10 11K.png"
+    },
+    {
+        "code": "LSPD-039",
+        "department": "LSPD",
+        "name": "Police Dorado",
+        "category": "Patrol",
+        "price": 16000,
+        "image": "images/poldorado 16K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police Dorado — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "poldorado 16K.png"
+    },
+    {
+        "code": "LSPD-040",
+        "department": "LSPD",
+        "name": "Police Gauntlet",
+        "category": "Interceptor",
+        "price": 28000,
+        "image": "images/polgauntlet 28K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Gauntlet — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polgauntlet 28K.png"
+    },
+    {
+        "code": "LSPD-041",
+        "department": "LSPD",
+        "name": "Police Greenwood",
+        "category": "Patrol",
+        "price": 10000,
+        "image": "images/polgreenwd 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police Greenwood — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polgreenwd 10K.png"
+    },
+    {
+        "code": "LSPD-042",
+        "department": "LSPD",
+        "name": "Police Greenwood",
+        "category": "Patrol",
+        "price": 10000,
+        "image": "images/polgreenwoood 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police Greenwood — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polgreenwoood 10K.png"
+    },
+    {
+        "code": "LSPD-043",
+        "department": "LSPD",
+        "name": "Police",
+        "category": "Patrol",
+        "price": 15000,
+        "image": "images/police 15K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "police 15K.png"
+    },
+    {
+        "code": "LSPD-044",
+        "department": "LSPD",
+        "name": "Police 3",
+        "category": "Patrol",
+        "price": 16000,
+        "image": "images/Police 3 16K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police 3 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Police 3 16K.png"
+    },
+    {
+        "code": "LSPD-045",
+        "department": "LSPD",
+        "name": "Police 5",
+        "category": "Patrol",
+        "price": 10000,
+        "image": "images/Police 5 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police 5 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Police 5 10K.png"
+    },
+    {
+        "code": "LSPD-046",
+        "department": "LSPD",
+        "name": "Police 2",
+        "category": "Patrol",
+        "price": 16000,
+        "image": "images/Police2 16K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Police2 16K.png"
+    },
+    {
+        "code": "LSPD-047",
+        "department": "LSPD",
+        "name": "Police 2B",
+        "category": "Patrol",
+        "price": 68000,
+        "image": "images/police2b 68K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police 2B — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "police2b 68K.png"
+    },
+    {
+        "code": "LSPD-048",
+        "department": "LSPD",
+        "name": "Police 4",
+        "category": "Patrol",
+        "price": 25000,
+        "image": "images/Police4 25K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police 4 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Police4 25K.png"
+    },
+    {
+        "code": "LSPD-049",
+        "department": "LSPD",
+        "name": "Police 5B",
+        "category": "Patrol",
+        "price": 15000,
+        "image": "images/police5b 15K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police 5B — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "police5b 15K.png"
+    },
+    {
+        "code": "LSPD-050",
+        "department": "LSPD",
+        "name": "Police B",
+        "category": "Patrol",
+        "price": 18000,
+        "image": "images/Policeb 18K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police B — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Policeb 18K.png"
+    },
+    {
+        "code": "LSPD-051",
+        "department": "LSPD",
+        "name": "Police B2",
+        "category": "Patrol",
+        "price": 15000,
+        "image": "images/Policeb 2 15K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police B2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Policeb 2 15K.png"
+    },
+    {
+        "code": "LSPD-052",
+        "department": "LSPD",
+        "name": "Police B1",
+        "category": "Patrol",
+        "price": 21000,
+        "image": "images/policeb1 21K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police B1 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "policeb1 21K.png"
+    },
+    {
+        "code": "LSPD-053",
+        "department": "LSPD",
+        "name": "Police Boat RB",
+        "category": "Boat",
+        "price": 10000,
+        "image": "images/policeboatrb 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Marine",
+        "description": "Police Boat RB — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "policeboatrb 10K.png"
+    },
+    {
+        "code": "LSPD-054",
+        "department": "LSPD",
+        "name": "Police T3",
+        "category": "Patrol",
+        "price": 45000,
+        "image": "images/Policet3 45K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police T3 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Policet3 45K.png"
+    },
+    {
+        "code": "LSPD-055",
+        "department": "LSPD",
+        "name": "Police Impaler",
+        "category": "Interceptor",
+        "price": 14000,
+        "image": "images/polimpaler 14K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Impaler — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polimpaler 14K.png"
+    },
+    {
+        "code": "LSPD-056",
+        "department": "LSPD",
+        "name": "Police Impaler 6",
+        "category": "Interceptor",
+        "price": 10000,
+        "image": "images/polimpaler6 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Impaler 6 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polimpaler6 10K.png"
+    },
+    {
+        "code": "LSPD-057",
+        "department": "LSPD",
+        "name": "Police Insurgent",
+        "category": "Tactical",
+        "price": 69000,
+        "image": "images/polinsurgent 69K.png",
+        "status": "Restricted",
+        "seats": "4-8",
+        "speed": "Nízka",
+        "usage": "Tactical",
+        "description": "Police Insurgent — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polinsurgent 69K.png"
+    },
+    {
+        "code": "LSPD-058",
+        "department": "LSPD",
+        "name": "Police Speedo",
+        "category": "Transport",
+        "price": 16000,
+        "image": "images/Polnspeedo 16K.png",
+        "status": "Available",
+        "seats": "2 + transport",
+        "speed": "Nízka",
+        "usage": "Transport",
+        "description": "Police Speedo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Polnspeedo 16K.png"
+    },
+    {
+        "code": "LSPD-059",
+        "department": "LSPD",
+        "name": "Police Outlaw",
+        "category": "Off-Road",
+        "price": 18000,
+        "image": "images/poloutlaw 18K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Terrain",
+        "description": "Police Outlaw — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "poloutlaw 18K.png"
+    },
+    {
+        "code": "LSPD-060",
+        "department": "LSPD",
+        "name": "Police Scout",
+        "category": "SUV",
+        "price": 20000,
+        "image": "images/Polscout 20K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Police Scout — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Polscout 20K.png"
+    },
+    {
+        "code": "LSPD-061",
+        "department": "LSPD",
+        "name": "Police Scout",
+        "category": "SUV",
+        "price": 46000,
+        "image": "images/polscout 46K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Police Scout — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polscout 46K.png"
+    },
+    {
+        "code": "LSPD-062",
+        "department": "LSPD",
+        "name": "Police Shitzu",
+        "category": "Motorcycle",
+        "price": 25000,
+        "image": "images/polshitzu 25K.png",
+        "status": "Available",
+        "seats": "1",
+        "speed": "Vysoká",
+        "usage": "Traffic",
+        "description": "Police Shitzu — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polshitzu 25K.png"
+    },
+    {
+        "code": "LSPD-063",
+        "department": "LSPD",
+        "name": "Police Stalker",
+        "category": "SUV",
+        "price": 10000,
+        "image": "images/polstalker 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Police Stalker — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polstalker 10K.png"
+    },
+    {
+        "code": "LSPD-064",
+        "department": "LSPD",
+        "name": "Police Torrence",
+        "category": "SUV",
+        "price": 14000,
+        "image": "images/poltorence 14K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol / Supervisor",
+        "description": "Police Torrence — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "poltorence 14K.png"
+    },
+    {
+        "code": "LSPD-065",
+        "department": "LSPD",
+        "name": "Police Victor",
+        "category": "Patrol",
+        "price": 10000,
+        "image": "images/polvictor 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Police Victor — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polvictor 10K.png"
+    },
+    {
+        "code": "LSPD-066",
+        "department": "LSPD",
+        "name": "Police Vigero G",
+        "category": "Interceptor",
+        "price": 80000,
+        "image": "images/polvigerog 80K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Vigero G — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polvigerog 80K.png"
+    },
+    {
+        "code": "LSPD-067",
+        "department": "LSPD",
+        "name": "Police Vigero S",
+        "category": "Interceptor",
+        "price": 85000,
+        "image": "images/polvigeros 85K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police Vigero S — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polvigeros 85K.png"
+    },
+    {
+        "code": "LSPD-068",
+        "department": "LSPD",
+        "name": "Police VSTR",
+        "category": "Interceptor",
+        "price": 34000,
+        "image": "images/polvstr 34K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Police VSTR — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "polvstr 34K.png"
+    },
+    {
+        "code": "LSPD-069",
+        "department": "LSPD",
+        "name": "Premier Unmarked",
+        "category": "Unmarked",
+        "price": 45000,
+        "image": "images/premierumk 45K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "Premier Unmarked — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "premierumk 45K.png"
+    },
+    {
+        "code": "LSPD-070",
+        "department": "LSPD",
+        "name": "PR Outlaw",
+        "category": "Off-Road",
+        "price": 59000,
+        "image": "images/proutlaw 59K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Terrain",
+        "description": "PR Outlaw — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "proutlaw 59K.png"
+    },
+    {
+        "code": "LSPD-071",
+        "department": "LSPD",
+        "name": "PV A JV",
+        "category": "Patrol",
+        "price": 16000,
+        "image": "images/pvajv 16K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "PV A JV — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "pvajv 16K.png"
+    },
+    {
+        "code": "LSPD-072",
+        "department": "LSPD",
+        "name": "PV S JV",
+        "category": "Patrol",
+        "price": 18000,
+        "image": "images/pvsjv 18K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "PV S JV — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "pvsjv 18K.png"
+    },
+    {
+        "code": "LSPD-073",
+        "department": "LSPD",
+        "name": "PV T JV",
+        "category": "Patrol",
+        "price": 40000,
+        "image": "images/pvtjv 40K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "PV T JV — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "pvtjv 40K.png"
+    },
+    {
+        "code": "SWAT-074",
+        "department": "SWAT",
+        "name": "Riot 2",
+        "category": "Tactical",
+        "price": 86000,
+        "image": "images/Riot2 86K.png",
+        "status": "Restricted",
+        "seats": "4-8",
+        "speed": "Nízka",
+        "usage": "Tactical",
+        "description": "Riot 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Riot2 86K.png"
+    },
+    {
+        "code": "SAHP-075",
+        "department": "SAHP",
+        "name": "SAHP Buffalo",
+        "category": "Interceptor",
+        "price": 18000,
+        "image": "images/sahp buffalo 18K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Highway Patrol",
+        "description": "SAHP Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "sahp buffalo 18K.png"
+    },
+    {
+        "code": "SAHP-076",
+        "department": "SAHP",
+        "name": "SAHP STX",
+        "category": "Interceptor",
+        "price": 29000,
+        "image": "images/SAHP Stx 29K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Highway Patrol",
+        "description": "SAHP STX — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "SAHP Stx 29K.png"
+    },
+    {
+        "code": "SAHP-077",
+        "department": "SAHP",
+        "name": "SAHP Coquette",
+        "category": "Interceptor",
+        "price": 80000,
+        "image": "images/Sahpcoquette 80K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Highway Patrol",
+        "description": "SAHP Coquette — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Sahpcoquette 80K.png"
+    },
+    {
+        "code": "SAHP-078",
+        "department": "SAHP",
+        "name": "SAHP Scout",
+        "category": "Patrol",
+        "price": 25000,
+        "image": "images/Sahpcout 25K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Highway Patrol",
+        "description": "SAHP Scout — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Sahpcout 25K.png"
+    },
+    {
+        "code": "SAHP-079",
+        "department": "SAHP",
+        "name": "SAHP Gresley",
+        "category": "SUV",
+        "price": 28000,
+        "image": "images/sahpgresley 28K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Highway Patrol",
+        "description": "SAHP Gresley — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "sahpgresley 28K.png"
+    },
+    {
+        "code": "LSSD-080",
+        "department": "LSSD",
+        "name": "Sheriff Buffalo",
+        "category": "Interceptor",
+        "price": 18000,
+        "image": "images/sdbuffalo 18K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Sheriff Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "sdbuffalo 18K.png"
+    },
+    {
+        "code": "LSPD-081",
+        "department": "LSPD",
+        "name": "Sentinel PD",
+        "category": "Patrol",
+        "price": 29000,
+        "image": "images/sent5pd 29K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Sentinel PD — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "sent5pd 29K.png"
+    },
+    {
+        "code": "LSSD-082",
+        "department": "LSSD",
+        "name": "Sheriff Buffalo 2",
+        "category": "Interceptor",
+        "price": 15000,
+        "image": "images/shapbuffalo2 15K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "Sheriff Buffalo 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "shapbuffalo2 15K.png"
+    },
+    {
+        "code": "LSSD-083",
+        "department": "LSSD",
+        "name": "Sheriff",
+        "category": "Patrol",
+        "price": 10000,
+        "image": "images/Sherrif 10K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Sheriff — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Sherrif 10K.png"
+    },
+    {
+        "code": "LSSD-084",
+        "department": "LSSD",
+        "name": "Sheriff 2",
+        "category": "Patrol",
+        "price": 15000,
+        "image": "images/Sherrif 2 15K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "Sheriff 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Sherrif 2 15K.png"
+    },
+    {
+        "code": "LSPD-085",
+        "department": "LSPD",
+        "name": "SPB B JV",
+        "category": "Patrol",
+        "price": 60000,
+        "image": "images/spbbjv 60K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Stredná",
+        "usage": "Patrol",
+        "description": "SPB B JV — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "spbbjv 60K.png"
+    },
+    {
+        "code": "LSPD-086",
+        "department": "LSPD",
+        "name": "State Unmarked Buffalo",
+        "category": "Unmarked",
+        "price": 15000,
+        "image": "images/stdumkbuffalo 15K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "State Unmarked Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "stdumkbuffalo 15K.png"
+    },
+    {
+        "code": "SWAT-087",
+        "department": "SWAT",
+        "name": "SWAT Van 2",
+        "category": "Tactical",
+        "price": 45000,
+        "image": "images/swatvan2 45K.png",
+        "status": "Restricted",
+        "seats": "4-8",
+        "speed": "Nízka",
+        "usage": "Tactical",
+        "description": "SWAT Van 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "swatvan2 45K.png"
+    },
+    {
+        "code": "LSPD-088",
+        "department": "LSPD",
+        "name": "Torrence Unmarked 2",
+        "category": "Unmarked",
+        "price": 74000,
+        "image": "images/torrumk2 74K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "Torrence Unmarked 2 — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "torrumk2 74K.png"
+    },
+    {
+        "code": "LSPD-089",
+        "department": "LSPD",
+        "name": "TRU Buffalo",
+        "category": "Interceptor",
+        "price": 59000,
+        "image": "images/trubuffalo 59K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "TRU Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "trubuffalo 59K.png"
+    },
+    {
+        "code": "LSPD-090",
+        "department": "LSPD",
+        "name": "TUF Buffalo",
+        "category": "Interceptor",
+        "price": 35000,
+        "image": "images/Tufbuffalo 35K.png",
+        "status": "Available",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Pursuit",
+        "description": "TUF Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "Tufbuffalo 35K.png"
+    },
+    {
+        "code": "LSPD-091",
+        "department": "LSPD",
+        "name": "Unmarked Alamo",
+        "category": "Unmarked",
+        "price": 80000,
+        "image": "images/umkalamo 80K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "Unmarked Alamo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "umkalamo 80K.png"
+    },
+    {
+        "code": "LSPD-092",
+        "department": "LSPD",
+        "name": "Unmarked Buffalo",
+        "category": "Unmarked",
+        "price": 85000,
+        "image": "images/umkbuffalo 85K.png",
+        "status": "Restricted",
+        "seats": "2-4",
+        "speed": "Vysoká",
+        "usage": "Detective",
+        "description": "Unmarked Buffalo — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "umkbuffalo 85K.png"
+    },
+    {
+        "code": "FED-093",
+        "department": "FEDERAL",
+        "name": "USMS Coach",
+        "category": "Transport",
+        "price": 80000,
+        "image": "images/UsMS Coach 80K.png",
+        "status": "Restricted",
+        "seats": "2 + transport",
+        "speed": "Nízka",
+        "usage": "Federal",
+        "description": "USMS Coach — vozidlo importované z uploadnutých fotiek. Cena je načítaná z názvu súboru.",
+        "fileName": "UsMS Coach 80K.png"
+    }
+];
 
     const state = {
       search: "",
@@ -1283,6 +2207,7 @@
       totalCount: document.getElementById("totalCount"),
       lspdCount: document.getElementById("lspdCount"),
       lssdCount: document.getElementById("lssdCount"),
+      otherCount: document.getElementById("otherCount"),
       searchInput: document.getElementById("searchInput"),
       departmentFilter: document.getElementById("departmentFilter"),
       categoryFilter: document.getElementById("categoryFilter"),
@@ -1293,7 +2218,6 @@
       vehicleGrid: document.getElementById("vehicleGrid"),
       emptyState: document.getElementById("emptyState"),
       pagination: document.getElementById("pagination"),
-
       modal: document.getElementById("vehicleModal"),
       modalImage: document.getElementById("modalImage"),
       modalDepartment: document.getElementById("modalDepartment"),
@@ -1305,39 +2229,44 @@
       modalSeats: document.getElementById("modalSeats"),
       modalSpeed: document.getElementById("modalSpeed"),
       modalUsage: document.getElementById("modalUsage"),
-      modalPrice: document.getElementById("modalPrice")
+      modalPrice: document.getElementById("modalPrice"),
+      modalFile: document.getElementById("modalFile")
     };
-
-    const money = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0
-    });
 
     function init() {
       fillStats();
-      fillCategories();
+      fillFilterOptions();
       bindEvents();
       render();
     }
 
     function fillStats() {
-      const lspd = vehicles.filter(vehicle => vehicle.department === "LSPD").length;
-      const lssd = vehicles.filter(vehicle => vehicle.department === "LSSD").length;
+      const lspd = vehicles.filter(v => v.department === "LSPD").length;
+      const lssd = vehicles.filter(v => v.department === "LSSD").length;
+      const other = vehicles.length - lspd - lssd;
 
       elements.totalCount.textContent = vehicles.length;
       elements.lspdCount.textContent = lspd;
       elements.lssdCount.textContent = lssd;
+      elements.otherCount.textContent = other;
     }
 
-    function fillCategories() {
-      const categories = [...new Set(vehicles.map(vehicle => vehicle.category))].sort();
+    function fillFilterOptions() {
+      fillSelect(elements.departmentFilter, uniqueValues("department"));
+      fillSelect(elements.categoryFilter, uniqueValues("category"));
+      fillSelect(elements.statusFilter, uniqueValues("status"));
+    }
 
-      categories.forEach(category => {
+    function uniqueValues(key) {
+      return [...new Set(vehicles.map(vehicle => vehicle[key]).filter(Boolean))].sort();
+    }
+
+    function fillSelect(select, values) {
+      values.forEach(value => {
         const option = document.createElement("option");
-        option.value = category;
-        option.textContent = category;
-        elements.categoryFilter.appendChild(option);
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
       });
     }
 
@@ -1385,21 +2314,14 @@
         if (detailButton) {
           const code = detailButton.getAttribute("data-detail");
           const vehicle = vehicles.find(item => item.code === code);
-
-          if (vehicle) {
-            openModal(vehicle);
-          }
+          if (vehicle) openModal(vehicle);
         }
 
-        if (closeButton) {
-          closeModal();
-        }
+        if (closeButton) closeModal();
       });
 
       document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-          closeModal();
-        }
+        if (event.key === "Escape") closeModal();
       });
     }
 
@@ -1408,18 +2330,20 @@
 
       if (state.search) {
         result = result.filter(vehicle => {
-          const searchable = `
-            ${vehicle.code}
-            ${vehicle.department}
-            ${vehicle.name}
-            ${vehicle.category}
-            ${vehicle.price}
-            ${vehicle.status}
-            ${vehicle.seats}
-            ${vehicle.speed}
-            ${vehicle.usage}
-            ${vehicle.description}
-          `.toLowerCase();
+          const searchable = [
+            vehicle.code,
+            vehicle.department,
+            vehicle.name,
+            vehicle.category,
+            vehicle.price,
+            formatPrice(vehicle.price),
+            vehicle.status,
+            vehicle.seats,
+            vehicle.speed,
+            vehicle.usage,
+            vehicle.description,
+            vehicle.fileName
+          ].join(" ").toLowerCase();
 
           return searchable.includes(state.search);
         });
@@ -1439,24 +2363,13 @@
 
       result.sort((a, b) => {
         switch (state.sort) {
-          case "name-desc":
-            return b.name.localeCompare(a.name);
-
-          case "price-asc":
-            return a.price - b.price;
-
-          case "price-desc":
-            return b.price - a.price;
-
-          case "department":
-            return a.department.localeCompare(b.department) || a.name.localeCompare(b.name);
-
-          case "category":
-            return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
-
+          case "name-desc": return b.name.localeCompare(a.name);
+          case "price-asc": return a.price - b.price;
+          case "price-desc": return b.price - a.price;
+          case "department": return a.department.localeCompare(b.department) || a.name.localeCompare(b.name);
+          case "category": return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
           case "name-asc":
-          default:
-            return a.name.localeCompare(b.name);
+          default: return a.name.localeCompare(b.name);
         }
       });
 
@@ -1465,23 +2378,14 @@
 
     function render() {
       const filtered = getFilteredVehicles();
-
       const totalPages = Math.max(1, Math.ceil(filtered.length / state.perPage));
 
-      if (state.page > totalPages) {
-        state.page = totalPages;
-      }
+      if (state.page > totalPages) state.page = totalPages;
 
       const start = (state.page - 1) * state.perPage;
       const visible = filtered.slice(start, start + state.perPage);
 
-      elements.resultsInfo.innerHTML = `
-        Zobrazené:
-        <strong>${visible.length}</strong>
-        z
-        <strong>${filtered.length}</strong>
-        nájdených vozidiel
-      `;
+      elements.resultsInfo.innerHTML = `Zobrazené: <strong>${visible.length}</strong> z <strong>${filtered.length}</strong> nájdených vozidiel`;
 
       elements.vehicleGrid.innerHTML = visible.map(createVehicleCard).join("");
       elements.emptyState.style.display = filtered.length === 0 ? "block" : "none";
@@ -1490,56 +2394,35 @@
     }
 
     function createVehicleCard(vehicle) {
-      const departmentClass = vehicle.department.toLowerCase();
-      const statusClass = vehicle.status.toLowerCase().replaceAll(" ", "-");
+      const departmentClass = slug(vehicle.department);
+      const statusClass = slug(vehicle.status);
 
       return `
         <article class="vehicle-card ${departmentClass}">
-          <div class="vehicle-photo" style="--photo: url('${escapeAttr(vehicle.image)}')">
+          <div class="vehicle-photo" style="--photo: url('${cssUrl(vehicle.image)}')">
             <span class="vehicle-badge ${departmentClass}">${escapeHTML(vehicle.department)}</span>
             <span class="status-badge ${statusClass}">${escapeHTML(vehicle.status)}</span>
           </div>
 
           <div class="vehicle-content">
-            <div class="vehicle-meta">
-              ${escapeHTML(vehicle.category)} · ${escapeHTML(vehicle.code)}
-            </div>
-
+            <div class="vehicle-meta">${escapeHTML(vehicle.category)} · ${escapeHTML(vehicle.code)}</div>
             <h3>${escapeHTML(vehicle.name)}</h3>
-
             <p class="vehicle-desc">${escapeHTML(vehicle.description)}</p>
 
             <div class="vehicle-specs">
-              <div class="spec">
-                <small>Posádka</small>
-                <strong>${escapeHTML(vehicle.seats)}</strong>
-              </div>
-
-              <div class="spec">
-                <small>Rýchlosť</small>
-                <strong>${escapeHTML(vehicle.speed)}</strong>
-              </div>
-
-              <div class="spec">
-                <small>Využitie</small>
-                <strong>${escapeHTML(vehicle.usage)}</strong>
-              </div>
-
-              <div class="spec">
-                <small>Typ</small>
-                <strong>${escapeHTML(vehicle.category)}</strong>
-              </div>
+              <div class="spec"><small>Posádka</small><strong>${escapeHTML(vehicle.seats)}</strong></div>
+              <div class="spec"><small>Rýchlosť</small><strong>${escapeHTML(vehicle.speed)}</strong></div>
+              <div class="spec"><small>Využitie</small><strong>${escapeHTML(vehicle.usage)}</strong></div>
+              <div class="spec"><small>Typ</small><strong>${escapeHTML(vehicle.category)}</strong></div>
             </div>
 
             <div class="price-row">
               <div>
                 <small>Cena</small>
-                <div class="price">${money.format(vehicle.price)}</div>
+                <div class="price">${formatPrice(vehicle.price)}</div>
               </div>
 
-              <button class="detail-btn" data-detail="${escapeAttr(vehicle.code)}">
-                Detail
-              </button>
+              <button class="detail-btn" data-detail="${escapeAttr(vehicle.code)}">Detail</button>
             </div>
           </div>
         </article>
@@ -1548,19 +2431,13 @@
 
     function renderPagination(totalPages) {
       elements.pagination.innerHTML = "";
-
       if (totalPages <= 1) return;
 
       const prevButton = document.createElement("button");
       prevButton.className = "page-btn";
       prevButton.textContent = "←";
       prevButton.disabled = state.page === 1;
-      prevButton.addEventListener("click", () => {
-        state.page--;
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
+      prevButton.addEventListener("click", () => changePage(state.page - 1));
       elements.pagination.appendChild(prevButton);
 
       const maxButtons = 7;
@@ -1575,13 +2452,7 @@
         const button = document.createElement("button");
         button.className = `page-btn ${i === state.page ? "active" : ""}`;
         button.textContent = i;
-
-        button.addEventListener("click", () => {
-          state.page = i;
-          render();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
+        button.addEventListener("click", () => changePage(i));
         elements.pagination.appendChild(button);
       }
 
@@ -1589,17 +2460,18 @@
       nextButton.className = "page-btn";
       nextButton.textContent = "→";
       nextButton.disabled = state.page === totalPages;
-      nextButton.addEventListener("click", () => {
-        state.page++;
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
+      nextButton.addEventListener("click", () => changePage(state.page + 1));
       elements.pagination.appendChild(nextButton);
     }
 
+    function changePage(page) {
+      state.page = page;
+      render();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     function openModal(vehicle) {
-      elements.modalImage.style.setProperty("--modal-photo", `url('${vehicle.image}')`);
+      elements.modalImage.style.setProperty("--modal-photo", `url('${cssUrl(vehicle.image)}')`);
       elements.modalDepartment.textContent = vehicle.department;
       elements.modalStatus.textContent = vehicle.status;
       elements.modalName.textContent = vehicle.name;
@@ -1609,7 +2481,8 @@
       elements.modalSeats.textContent = vehicle.seats;
       elements.modalSpeed.textContent = vehicle.speed;
       elements.modalUsage.textContent = vehicle.usage;
-      elements.modalPrice.textContent = money.format(vehicle.price);
+      elements.modalPrice.textContent = formatPrice(vehicle.price);
+      elements.modalFile.textContent = vehicle.fileName || vehicle.image;
 
       elements.modal.classList.add("active");
       document.body.style.overflow = "hidden";
@@ -1618,6 +2491,27 @@
     function closeModal() {
       elements.modal.classList.remove("active");
       document.body.style.overflow = "";
+    }
+
+    function formatPrice(value) {
+      const number = Number(value || 0);
+      if (number >= 1000) {
+        const k = number / 1000;
+        return `${Number.isInteger(k) ? k : k.toFixed(1)}K`;
+      }
+      return String(number);
+    }
+
+    function slug(value) {
+      return String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
+    function cssUrl(value) {
+      return encodeURI(String(value))
+        .replaceAll("'", "%27")
+        .replaceAll('"', "%22")
+        .replaceAll("(", "%28")
+        .replaceAll(")", "%29");
     }
 
     function escapeHTML(value) {
@@ -1630,10 +2524,7 @@
     }
 
     function escapeAttr(value) {
-      return String(value)
-        .replaceAll("\\", "\\\\")
-        .replaceAll("'", "\\'")
-        .replaceAll('"', "&quot;");
+      return escapeHTML(value);
     }
 
     init();
