@@ -1,153 +1,16 @@
-<!DOCTYPE html>
-<html lang="sk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vehicle Catalog · LSPD / LSSD</title>
-
-  <style>
-    :root {
-      --bg: #060913;
-      --bg-soft: #0d1424;
-      --card: #111a2c;
-      --card-light: #18243a;
-      --text: #f6f8fc;
-      --muted: #9ba8ba;
-      --line: rgba(255,255,255,.11);
-      --lspd: #2f7dff;
-      --lssd: #d7a640;
-      --sahp: #51d6ff;
-      --federal: #b58cff;
-      --swat: #ff5b5b;
-      --success: #3ee49f;
-      --radius: 22px;
-      --shadow: 0 24px 70px rgba(0,0,0,.42);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(47,125,255,.22), transparent 32%),
-        radial-gradient(circle at top right, rgba(215,166,64,.18), transparent 34%),
-        radial-gradient(circle at 50% 0%, rgba(181,140,255,.08), transparent 36%),
-        linear-gradient(180deg, #05070d 0%, var(--bg) 100%);
-    }
-
-    button, input, select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    .page {
-      width: min(1600px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 70px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 22px;
       padding: 18px 22px;
       margin-bottom: 26px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(13,20,36,.84);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .brand-logo {
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
-      border-radius: 17px;
-      background: linear-gradient(135deg, var(--lspd), var(--lssd));
-      font-weight: 900;
-      letter-spacing: -.05em;
-      box-shadow: 0 0 40px rgba(47,125,255,.28);
-    }
-
-    .brand h1 {
-      font-size: clamp(1.15rem, 2vw, 1.8rem);
-      line-height: 1.05;
-    }
-
-    .brand p {
-      color: var(--muted);
-      margin-top: 4px;
-      font-size: .92rem;
-    }
-
-    .top-stats {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .stat {
+ 
       min-width: 94px;
       padding: 11px 14px;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255,255,255,.045);
+      border-radius: 16px   background: rgba(255,255,255,.045);
     }
 
-    .stat span {
-      display: block;
-      font-size: 1.18rem;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .stat small {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: .73rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .stat.blue { border-color: rgba(47,125,255,.3); background: rgba(47,125,255,.14); }
-    .stat.gold { border-color: rgba(215,166,64,.32); background: rgba(215,166,64,.14); }
-    .stat.gray { border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.05); }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 24px;
-      padding: clamp(28px, 5vw, 56px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(18,26,44,.95), rgba(7,10,18,.96)),
-        repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0, rgba(255,255,255,.025) 1px, transparent 1px, transparent 10px);
+ 55,255,255,.025) 1px, transparent 1px, transparent 10px);
       box-shadow: var(--shadow);
     }
 
